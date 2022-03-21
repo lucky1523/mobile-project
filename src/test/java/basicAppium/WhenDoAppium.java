@@ -40,20 +40,20 @@ public class WhenDoAppium {
     @Test
     public void verifyCalculator() throws InterruptedException {
         Thread.sleep(2000);
-        String nombreDelPex= "Luciano";
+        String nombreProyecto= "Luciano";
 
         // 2 com.android.calculator2:id/digit_2
         appiumDriver.findElement(By.id("com.vrproductiveapps.whendo:id/fab")).click();
         // + com.android.calculator2:id/op_add
-        appiumDriver.findElement(By.id("com.vrproductiveapps.whendo:id/noteTextTitle")).sendKeys(nombreDelPex);
+        appiumDriver.findElement(By.id("com.vrproductiveapps.whendo:id/noteTextTitle")).sendKeys(nombreProyecto);
         // 5 com.android.calculator2:id/digit_5
         appiumDriver.findElement(By.id("com.vrproductiveapps.whendo:id/noteTextNotes")).sendKeys("Luciano Descripcion");
         // = com.android.calculator2:id/eq
         appiumDriver.findElement(By.id("com.vrproductiveapps.whendo:id/saveItem")).click();
         Thread.sleep(2000);
         // resul com.android.calculator2:id/result
-        String expected = nombreDelPex;
-        String actual = appiumDriver.findElement(By.xpath("//android.widget.LinearLayout/android.widget.LinearLayout/android.widget.TextView[@text='"+nombreDelPex+"']")).getText();
+        String expected = nombreProyecto;
+        String actual = appiumDriver.findElement(By.xpath("//android.widget.LinearLayout/android.widget.LinearLayout/android.widget.TextView[@text='"+nombreProyecto+"']")).getText();
         Assertions.assertEquals(expected,actual,"error");
     }
 }
